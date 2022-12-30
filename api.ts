@@ -1,9 +1,9 @@
 import { Application } from "https://deno.land/x/oak/mod.ts";
-import { config } from "https://deno.land/x/dotenv/mod.ts";
 import router from "./routes/routes.ts";
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
+import "https://deno.land/x/dotenv/load.ts";
 
-const PORT = config().PORT ?? 8080;
+const PORT = Deno.env.get("PORT") ?? 666;
 
 const app = new Application();
 
